@@ -11,6 +11,3 @@ class WebScraping():
         for item in soup.find_all('img'):
             imgs_links.append(item['src'])
         return imgs_links
-
-
-    
