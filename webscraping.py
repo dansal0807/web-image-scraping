@@ -1,6 +1,7 @@
 
 import requests 
 from bs4 import BeautifulSoup 
+import os
 
 class WebScraping(): 
     def soup(html):
