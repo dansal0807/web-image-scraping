@@ -29,11 +29,15 @@ def downloadimages():
     options = []
     url_link=urlvar.get()
 
-    options = WebScraping.soup(url_link)
-
-    website_name = url_link.split('//')
-    website_name = website_name[1]
-
+    options = WebScraping.soup(url_link)    
+    
+    if "www." in url_link:
+        website_name = url_link.split('www.')
+        website_name = website_name[1]
+    else:
+        website_name = url_link.split('//')
+        website_name = website_name[1]
+        
     c = 0
     for imgs in options:
         if '.svg' not in imgs:
@@ -63,7 +67,7 @@ def downloadimages():
         
     os.chdir(current_dic)
     
-
+#Butão de realização do usuário
 optionButton = tk.Button(text='Baixar imagens', command=downloadimages, bg='green', fg='white', font=('Arial', 12, 'bold'))
 canvas.create_window(150, 180, window=optionButton)
 optionButton.grid(columnspan=8, column=0, row=4)
