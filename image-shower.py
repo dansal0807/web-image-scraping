@@ -60,6 +60,7 @@ def downloadimages():
         f = open(f'img{i}.jpg', 'wb')
         f.write(url_img.content)
         f.close()
+        
     os.chdir(current_dic)
     
 
