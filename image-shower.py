@@ -6,7 +6,7 @@ import os
 
 #instanciamento do tkinter:
 ws = tk.Tk()
-ws.title("Image shower")
+ws.title("Image downloader")
 
 #definindo as configurações do workspace:
 canvas = tk.Canvas(ws, width=800, height=400, bg="#AFEEEE")
