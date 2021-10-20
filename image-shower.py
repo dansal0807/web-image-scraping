@@ -28,7 +28,8 @@ urlentry.grid(columnspan=8, column=0, row=2)
 def downloadimages():
     options = []
     url_link=urlvar.get()
-
+    
+    #instanciando os links de imagens encontradas no site.
     options = WebScraping.soup(url_link)    
     
     if "www." in url_link:
@@ -37,7 +38,8 @@ def downloadimages():
     else:
         website_name = url_link.split('//')
         website_name = website_name[1]
-        
+    
+    #contagem dos arquivos nesses links que não são .svg (imagens vetorizadas):
     c = 0
     for imgs in options:
         if '.svg' not in imgs:
@@ -47,12 +49,14 @@ def downloadimages():
     imglinks = tk.Label(ws, bg="#AFEEEE", text= f'{message}', font=('Helvatical bold',11))
     imglinks.grid(columnspan=8, column=0, row=3)
     
+    #Mudança de diretório para criação de uma pasta com as imagens baixadas do site:
     current_dic = os.getcwd()
     if not os.path.exists(website_name):
         os.mkdir(website_name)
 
     os.chdir(website_name)
-
+    
+    #Downlaod das imagens com exceção para links corrompidos
     i = 0
     for imgs in options:
         if '.svg' not in imgs:
