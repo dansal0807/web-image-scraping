@@ -36,7 +36,9 @@ Download JPG or PNG images from a specific URL
 Download all images from a website using the website URL
 Usage
 Install the Requests and Tkinter libraries using pip command in a virtual environment:
+
 - pip install requests tkinter
+
 Run the program and enter the URL of the desired image or website
 Select the desired option (download single image or all images from the site)
 The images will be saved in JPG format in the local project folder
